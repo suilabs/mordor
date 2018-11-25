@@ -1,0 +1,31 @@
+{
+  "name": "mordor",
+  "version": "0.0.1",
+  "description": "Logger Service for suilabs",
+  "main": "src/server.js",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "date-fns": "^1.29.0",
+    "express": "^4.16.4",
+    "jest": "^23.6.0",
+    "mobile-detect": "^1.4.3",
+    "mongoose": "^5.3.13",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/suilabs/mordor.git"
+  },
+  "keywords": [
+    "metrics",
+    "simple"
+  ],
+  "author": "ShakMR",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/suilabs/mordor#readme"
+}
