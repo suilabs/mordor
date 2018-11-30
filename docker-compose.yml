@@ -4,8 +4,8 @@ services:
   mariadb:
     image: 'bitnami/mariadb:latest'
     environment:
-      - MARIADB_USER=$LC_DB_USERNAME
-      - MARIADB_PASSWORD=$LC_DB_PASSWORD
+      - MARIADB_ROOT_USER=$LC_DB_USERNAME
+      - MARIADB_ROOT_PASSWORD=$LC_DB_PASSWORD
       - MARIADB_DATABASE=suilabs_matomo
       - VIRTUAL_HOST=mariadb.suilabs.com
       - LETSENCRYPT_HOST=mariadb.suilabs.com
