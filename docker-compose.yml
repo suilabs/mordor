@@ -1,0 +1,40 @@
+version: '2'
+
+services:
+  mariadb:
+    image: 'bitnami/mariadb:latest'
+    environment:
+      - MARIADB_USER=$LC_DB_USERNAME
+      - MARIADB_PASSWORD_$LC_DB_PASSWORD
+      - MARIADB_DATABASE=suilabs_matomo
+      - VIRTUAL_HOST=mariadb.suilabs.com
+      - LETSENCRYPT_HOST=mariadb.suilabs.com
+      - LETSENCRYPT_EMAIL=borja.arias.upc@gmail.com
+    volumes:
+      - './maria-db:/bitnami'
+  application:
+    image: 'bitnami/matomo:latest'
+    environment:
+      - MARIADB_HOST=mariadb
+      - MARIADB_PORT_NUMBER=3306
+      - MATOMO_DATABASE_USER=$LC_DB_USERNAME
+      - MATOMO_DATABASE_PASSWORD=$LC_DB_PASSWORD
+      - MATOMO_DATABASE_NAME=suilbas_matomo
+      - MATOMO_USERNAME=$LC_MATOMO_USERNAME
+      - MATOMO_PASSWORD=$LC_MATOMO_PASSWORD
+      - VIRTUAL_HOST=matomo.suilabs.com
+      - LETSENCRYPT_HOST=matomo.suilabs.com
+      - LETSENCRYPT_EMAIL=borja.arias.upc@gmail.com
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - './matomo:/bitnami'
+    depends_on:
+      - mariadb
+
+volumes:
+  mariadb_data:
+    driver: local
+  matomo_data:
+    driver: local
