@@ -25,6 +25,9 @@ services:
       - VIRTUAL_HOST=matomo.suilabs.com
       - LETSENCRYPT_HOST=matomo.suilabs.com
       - LETSENCRYPT_EMAIL=borja.arias.upc@gmail.com
+    ports:
+      - '8080:80'
+      - '8443:443'
     volumes:
       - './matomo:/bitnami'
     depends_on:
