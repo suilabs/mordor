@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   mariadb:
@@ -38,3 +38,8 @@ volumes:
     driver: local
   matomo_data:
     driver: local
+
+networks:
+  default:
+    external:
+      name: webplatform_suilabs
