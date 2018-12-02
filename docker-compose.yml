@@ -22,8 +22,8 @@ services:
       - MATOMO_DATABASE_NAME=suilbas_matomo
       - MATOMO_USERNAME=$LC_MATOMO_USERNAME
       - MATOMO_PASSWORD=$LC_MATOMO_PASSWORD
-      - VIRTUAL_HOST=matomo.suilabs.com
-      - LETSENCRYPT_HOST=matomo.suilabs.com
+      - VIRTUAL_HOST=mordor.suilabs.com
+      - LETSENCRYPT_HOST=mordor.suilabs.com
       - LETSENCRYPT_EMAIL=borja.arias.upc@gmail.com
     ports:
       - '8080:80'
