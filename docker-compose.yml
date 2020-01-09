@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mariadb:
-    image: 'bitnami/mariadb:3.11.0'
+    image: 'bitnami/mariadb:latest'
     environment:
       - MARIADB_ROOT_USER=$LC_DB_USERNAME
       - MARIADB_ROOT_PASSWORD=$LC_DB_PASSWORD
@@ -13,7 +13,7 @@ services:
     volumes:
       - './maria-db:/bitnami'
   application:
-    image: 'bitnami/matomo:3.11.0'
+    image: 'bitnami/matomo:3.13.0'
     environment:
       - MARIADB_HOST=mariadb
       - MARIADB_PORT_NUMBER=3306
