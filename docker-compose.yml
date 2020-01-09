@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mariadb:
-    image: 'bitnami/mariadb:latest'
+    image: 'bitnami/mariadb:3.11.0'
     environment:
       - MARIADB_ROOT_USER=$LC_DB_USERNAME
       - MARIADB_ROOT_PASSWORD=$LC_DB_PASSWORD
