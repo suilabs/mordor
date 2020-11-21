@@ -20,7 +20,9 @@ workflows:
   build_and_deploy:
     jobs:
       - release:
+          context:
+            - maria_db
           filters:
             branches:
               only:
-                - master
+                - primary
